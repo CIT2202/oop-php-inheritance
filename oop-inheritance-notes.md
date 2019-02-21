@@ -114,7 +114,7 @@ abstract class Animal {
 $myAnimal=new Animal("Dave"); //Cannot instantiate abstract class
 ```
 ## Abstract methods
-The Abstract Animla class features an abstract method (*talk()*). Abstract methods have names but no body i.e. no code inside the function. An abstract method is like a rule:
+The Abstract Animal class features an abstract method (*talk()*). Abstract methods have names but no body i.e. no code inside the function. An abstract method is like a rule:
 * In this case it says all child classes must have a *talk()* method (it will be up to the child class to define this for itself). 
 * But it must have one or we will get an error!
 
@@ -126,7 +126,7 @@ class Dog extends Animal{
     {
         return "{$this->name} has picked up the {$item}";
     }
-    public function talk()
+    public function talk() //we have to implement a talk method
     {
         return "{$this->name} says woof";
     }
@@ -140,7 +140,7 @@ class Cat extends Animal {
     {
         return "{$this->name} scratched you";
     }
-    public function talk()
+    public function talk() //we have to implement a talk method
     {
         return "{$this->name} says meow";
     }
@@ -161,7 +161,7 @@ echo "<p>{$myDog->talk()}</p>"; // Fido says woof
 ### Polymorphism
 * Using Abstract classes and methods we get polymorphism. 
 * Polymorphism allows objects of different types to respond to method calls of the same name (in this case *talk*).
-* This idea may not seem very important but it makes our code flexible. We can add new types of Animal (e.g. a Snake) and the code will still work – I know the new type will have to implement a talk() method.
+* This idea may not seem very important but it makes our code flexible. We can add new types of Animal (e.g. a Snake) and the code will still work. If Snake is an Animal I know it will have to implement a talk() method.
 
 ```php
 $animals=[];
@@ -186,6 +186,7 @@ An interface can't specify the body of a method i.e. code that is part of the fu
 Here's an example:
 
 ```php
+//this is a simple interface that specifies a single method
 interface CanBeStroked{
     public function stroke();
 }
@@ -199,7 +200,7 @@ class Dog extends Animal implements CanBeStroked{
     {
         return "{$this->name} says woof";
     }
-    public function stroke()
+    public function stroke() //the Dog class implements CanBeStroked so has to feature a stroke() method
     {
         return "{$this->name} is wagging his tail";
     }
