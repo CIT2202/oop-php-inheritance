@@ -15,7 +15,7 @@ class ProjectManager{
 	public function hireContractor($contractor){
 		$this->contractors[]=$contractor;
 	}
-
+	
 	public function buildHouse()
 	{
 		foreach($this->contractors as $contractor){
@@ -41,12 +41,44 @@ Abstract class Contractor{
 	{
 		return $this->firstName." ".$this->lastName;
 	}
+	public function pay(){
+		return $this->getFullName()." just got paid.";
+	}
+	abstract function work();
+}
+
+class Builder extends Contractor{
 	public function digFoundations()
 	{
 		return $this->getFullName()." has dug some foundations.";
 	}
-	public function pay(){
-		return $this->getFullName()." just got paid.";
+	public function buildWalls()
+	{
+		return $this->getFullName()." has built the walls.";
+	}
+	public function work(){
+		return $this->buildWalls()." ".$this->digFoundations();
+	}
+}
+
+class Joiner extends Contractor{
+	public function work()
+	{
+		return $this->getFullName()." has made some stairs.";
+	}
+}
+
+class Electrician extends Contractor{
+	public function work()
+	{
+		return $this->getFullName()." has fitted the lights.";
+	}
+}
+
+class Plumber extends Contractor{
+	public function work()
+	{
+		return $this->getFullName()." has fitted a sink.";
 	}
 }
 
@@ -61,8 +93,6 @@ $projectManager->hireContractor($electrician);
 $projectManager->hireContractor($plumber);
 $projectManager->buildHouse();
 $projectManager->payContractors();
-
-
 
 ?>
 </body>
