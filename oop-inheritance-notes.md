@@ -54,7 +54,7 @@ class Cat extends Animal{
     }
 }
 $myCat=new Cat("Mackeral");
-echo $myCat->sleep(); // Displays Mackeral is sleeping. Zzzzzzzzzzzzzz
+echo $myCat->sleep(); // (from the Animal class) Displays Mackeral is sleeping. Zzzzzzzzzzzzzz
 echo $myCat->scratch(); // Displays Mackeral scratched you
 ```
 
