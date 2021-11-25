@@ -1,5 +1,6 @@
 # Inheritance in PHP
-* Inheritance lets one class make use of code in another class. We can think of it as an easy way to for us to re-use code. Imagine I am writing instructions for making an ice-cream. They might look something like: 
+Inheritance lets one class make use of code in another class. We can think of it as an easy way to for us to re-use code. Imagine I am writing instructions for making an ice-cream. They might look something like: 
+
 #### Make an ice-cream
 * Get cone
 * Fill cone with ice cream
