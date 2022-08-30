@@ -114,7 +114,7 @@ public function hireContractor($contractor){
 	$this->contractors[]=$contractor;
  }
 
-Modify the buildHouse and payContractors methods so that they user forEach loops call methods of Contractor objects e.g.
+Modify the buildHouse and payContractors methods so that they use forEach loops to call methods of Contractor objects e.g.
 
 foreach($this->contractors as $contractor){
 	echo "<p>".$contractor->work()."</p>";
